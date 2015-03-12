@@ -1,19 +1,13 @@
-# Scrabble Score for Epicodus
+# Numbers To Words for Epicodus
 ## by Daniel Toader and Patrick Fiorentino
 ### Date: March 12, 2015
 #### Description
-Takes a word and returns the Scrabble score for it according to these values:
-- A, E, I, O, U, L, N, R, S, T  =     1
-- D, G                            =     2
-- B, C, M, P                     =      3
-- F, H, V, W, Y                  =      4
-- K                               =     5
-- J, X                            =     8
-- Q, Z                            =     10
+
+Takes a number and converts into word form such as 300 will display as "Three Hundred"
 
 #### Setup instructions
 1. Clone this git repository
-2. Set your localhost root folder to ~/ScrabbleScore/web/
+2. Set your localhost root folder to ~/NumbersToWords/web/
 3. Ensure PHP server is running.
 4. Start the web app by pointing your browser to the root (http://localhost:8000/)  
 
