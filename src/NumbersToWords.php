@@ -20,6 +20,7 @@
             echo "<p>teen_combiner = " . $teen_combiner . "</p>";
             echo "<p>inner teens!</p>";
             array_push($final, $teens[$teen_combiner]);
+
             $i--;
           }   // test for a pure zero
           elseif (count($num_array) == 1 && $num_array[$last_digit] == 0) {
@@ -40,6 +41,26 @@
           else if ($i == $last_digit - 2) {
             array_push($final, $values[$number] . " hundred");
           }
+            // thousands position
+          else if ($i == $last_digit - 3 && count($num_array) == 4) {
+            array_push($final, $values[$number] . " thousand");
+          }
+           // ten thousands position
+          else if ($i == $last_digit - 4 && $number == 1) {
+            if ($num_array[$last_digit - 3] == 0) {
+              array_push($final, $teens[$number] . " thousand");
+            } else {
+              $teen_combiner = $num_array[$last_digit - 4] . $num_array[$last_digit - 3];
+            echo "<p>teen_combiner 2 = " . $teen_combiner . "</p>";
+            echo "<p>inner teens 2!</p>";
+
+            array_push($final, $teens[$teen_combiner] . " thousand");
+            }
+          }
+           // ten thousands position after teens
+          elseif ($i == $last_digit - 4 && $number != 1) {
+            array_push($final, $tens[$number] . " " . $values[$num_array[$last_digit - 3]] . " thousand");
+          }
         }
         $final = array_reverse($final);
         $final = implode(" ", $final);
@@ -49,5 +70,5 @@
     }
 
     $test = new NumbersToWords;
-    $test->convert(555);
+    $test->convert(55555);
  ?>
